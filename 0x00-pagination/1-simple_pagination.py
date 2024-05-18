@@ -42,7 +42,15 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        assert type(page) == int and type(page_size) == int
+        """
+        Get a page from the dataset
+        args:
+            page -> int: the page number
+            page_size -> int: the size of the page
+        returns:
+            List of lists representing the page of data
+        """
+        assert isinstance(page, int) and isinstance(page_size, int)
         assert page_size > 0 and page > 0
         start, end = index_range(page, page_size)
         data = self.dataset()
