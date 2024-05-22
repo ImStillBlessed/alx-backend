@@ -20,6 +20,10 @@ class FIFOCache(BaseCaching):
         super().__init__()
 
     def put(self, key, item):
+        """
+        This method adds a new item to the dictionary
+        and removes the oldest item to make way for new ones.
+        """
         if key and item:
             if len(self.cache_data) == BaseCaching.MAX_ITEMS:
                 discard = key
