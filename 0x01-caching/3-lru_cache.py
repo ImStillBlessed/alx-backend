@@ -6,6 +6,7 @@ LRU least recently used caching system
 
 BaseCaching = __import__('base_caching').BaseCaching
 
+
 class LRUCache(BaseCaching):
     """This is a class for a LRU caching system
     inherits BaseChing
@@ -31,7 +32,7 @@ class LRUCache(BaseCaching):
                 print(f"DISCARD: {discard}")
             self.cache_data[key] = item
             self.cache_order.append(key)
-    
+
     def get(self, key):
         """
         This method returns the value item from
