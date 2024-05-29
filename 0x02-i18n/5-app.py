@@ -21,12 +21,14 @@ users = {
     4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
 }
 
+
 def get_user():
     """mehod to Get user"""
     login_as = request.args.get('login_as')
     if login_as:
-        return users.get(int(login_as))    
+        return users.get(int(login_as))
     return None
+
 
 @app.before_request
 def before_request():
