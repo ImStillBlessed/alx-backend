@@ -45,7 +45,7 @@ def before_request():
             user_timezone = pytz.timezone(app.config['BABEL_DEFAULT_TIMEZONE'])
     else:
         user_timezone = pytz.timezone(app.config['BABEL_DEFAULT_TIMEZONE'])
-    
+
     current_time = datetime.now(user_timezone)
     g.current_time = format_datetime(current_time)
 
